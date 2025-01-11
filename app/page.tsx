@@ -19,7 +19,7 @@ export default async function Home() {
           <h1 className={styles.title}>三木 悠叶</h1>
           <p className={styles.description}>
           私はスーパーITエンジニア専攻で学んでいる学生です。
-          <br></br>
+          <br/>
           実践的なスキルを身につけることを目指して日々学んでいます。
           </p>
         </div>
