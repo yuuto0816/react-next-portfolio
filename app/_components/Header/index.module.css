@@ -13,9 +13,10 @@
 }
 
 .logo {
-  height: 24px;
-  width: auto;
+  width: 300px;
+  height: 150px;
 }
+
 
 @media (max-width: 640px) {
   .header {

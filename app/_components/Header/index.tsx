@@ -11,8 +11,8 @@ export default function Header() {
                     src="/logo.png"
                     alt="icon"
                     className={styles.logo}
-                    width={600}
-                    height={300}
+                    width={348}
+                    height={133}
                     priority
                 />
             </Link>
