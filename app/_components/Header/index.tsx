@@ -8,7 +8,7 @@ export default function Header() {
         <header className={styles.header}>
             <Link href="/" className={styles.logoLink}>
                 <Image
-                    src="/logo.svg"
+                    src="/logo.png"
                     alt="icon"
                     className={styles.logo}
                     width={348}
