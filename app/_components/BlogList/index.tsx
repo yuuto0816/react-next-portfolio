@@ -10,7 +10,7 @@ type Props = {
     news: News[];
 };
 
-export default function NewsList({ news }: Props) {
+export default function BlogList({ news }: Props) {
     if (news.length === 0) {
         return <p>記事がありません。</p>;
     }

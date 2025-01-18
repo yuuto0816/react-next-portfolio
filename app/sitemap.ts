@@ -1,10 +1,10 @@
 import { MetadataRoute } from "next";
-import { getAllCategoryList, getAllNewsList } from "./_libs/microcms";
+import { getAllCategoryList, getAllBlogList } from "./_libs/microcms";
 
 const buildUrl = (path?: string) => `http://localhost:3000${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const newsContents = await getAllNewsList();
+    const newsContents = await getAllBlogList();
     const categoryContents = await getAllCategoryList();
 
     const newsUrls: MetadataRoute.Sitemap = newsContents.map((content) => ({

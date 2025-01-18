@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { getNewsList } from "@/app/_libs/microcms";
-import NewsList from "@/app/_components/blogList";
+import { getBlogList } from "@/app/_libs/microcms";
+import BlogList from "@/app/_components/BlogList";
 import Pagination from "@/app/_components/Pagination";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
 
@@ -17,7 +17,7 @@ export default async function Page({ params }: Props) {
         notFound();
     }
 
-    const { contents: news, totalCount } = await getNewsList({
+    const { contents: news, totalCount } = await getBlogList({
         limit: NEWS_LIST_LIMIT,
         offset: NEWS_LIST_LIMIT * (current - 1),
     });
@@ -28,7 +28,7 @@ export default async function Page({ params }: Props) {
 
     return (
         <>
-            <NewsList news={news} />
+            <BlogList news={news} />
             <Pagination totalCount={totalCount} current={current} />
         </>
     );
