@@ -1,6 +1,6 @@
 import { getNewsList } from "@/app/_libs/microcms";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
-import NewsList from "@/app/_components/newsList";
+import NewsList from "@/app/_components/blogList";
 import SearchField from "@/app/_components/SearchField";
 
 type Props = {

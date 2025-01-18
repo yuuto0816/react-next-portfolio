@@ -1,5 +1,5 @@
 import { getNewsList } from "@/app/_libs/microcms";
-import NewsList from "@/app/_components/newsList";
+import NewsList from "@/app/_components/blogList";
 import Pagination from "@/app/_components/Pagination";
 import SearchField from "@/app/_components/SearchField";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
