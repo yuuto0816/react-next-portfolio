@@ -17,7 +17,7 @@ export default function Footer() {
                     </li>
                 </ul>
             </nav>
-            <p className={styles.cr}>© SIMPLE. All Rights Reserved 2024</p>
+            <p className={styles.cr}>© MIKI YUTO. All Rights Reserved 2024</p>
         </footer>
     );
 }
