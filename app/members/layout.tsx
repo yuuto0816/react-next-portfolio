@@ -2,7 +2,7 @@ import Hero from "@/app/_components/Hero";
 import Sheet from "@/app/_components/Sheet";
 
 export const metadata = {
-  title: "メンバー",
+  title: "趣味",
 };
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 export default function RootLayout({ children }: Props) {
   return (
     <>
-      <Hero title="Members" sub="メンバー" />
+      <Hero title="hobby" sub="趣味" />
       <Sheet>{children}</Sheet>;
     </>
   );
