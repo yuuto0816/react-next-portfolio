@@ -1,101 +1,126 @@
+/* トップセクション */
 .top {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  overflow: hidden;
-  padding: 200px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-gradient);
+    color: #fff;
+    text-align: center;
+    height: 100vh;
+    padding: 0 16px;
+    overflow: hidden;
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .description {
-  text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin-bottom: 32px;
 }
 
 .bgimg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  object-position: right;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(10px) brightness(0.6);
 }
 
-.news {
-  position: relative;
-  background-color: #fff;
-  width: 840px;
-  margin: -40px auto 0;
-  padding: 24px 40px;
-  border-radius: var(--border-radius);
+/* ニュースセクション */
+.Blog {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin: -80px auto 0;
+    padding: 32px;
+    max-width: 900px;
+    animation: fadeIn 1s ease-in-out;
 }
 
-.newsTitle {
-  font-size: 1.5rem;
+.BlogTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 24px;
 }
 
-.newsLink {
-  position: absolute;
-  right: -40px;
-  bottom: -40px;
+.BlogLink {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
 }
 
+.BlogLink a {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.BlogLink a:hover {
+    background-color: #005bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* レスポンシブ対応 */
 @media (max-width: 1000px) {
-  .news {
-    width: calc(100% - 160px);
-  }
+    .title {
+        font-size: 3rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .Blog {
+        width: calc(100% - 64px);
+    }
 }
 
 @media (max-width: 640px) {
-  .top {
-    padding: 120px 16px;
-  }
-  .title {
-    font-size: 2rem;
-    text-align: left;
-  }
+    .title {
+        font-size: 2.5rem;
+    }
 
-  .description {
-    text-align: center;
-    font-size: 0.9rem;
-    text-align: left;
-  }
+    .description {
+        font-size: 0.9rem;
+    }
 
-  .bgimg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: auto;
-    height: 600px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: -1;
-  }
-
-  .news {
-    width: calc(100% - 32px);
-    padding: 16px 24px;
-  }
-
-  .newsLink {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin-top: 16px;
-  }
+    .Blog {
+        width: calc(100% - 32px);
+        padding: 24px;
+    }
 }

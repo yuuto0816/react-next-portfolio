@@ -1,20 +1,51 @@
 .button {
-  display: block;
+  display: inline-block;
   padding: 20px 40px;
-  border-radius: var(--border-radius);
-  width: 300px;
-  background: url("/arrow-right.svg") no-repeat right 20px center,
-    var(--color-button-primary);
-  color: var(--color-text-unpainted);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0070f3, #00d9ff);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: left 0.3s ease-in-out;
 }
 
 .button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
 }
 
 @media (max-width: 640px) {
   .button {
     padding: 16px 24px;
     width: 100%;
+    font-size: 0.9rem;
   }
 }

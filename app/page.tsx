@@ -33,11 +33,11 @@ export default async function Home() {
                     sizes="100vw"
                 />
             </section>
-            <section className={styles.news}>
-                <h2 className={styles.newsTitle}>News</h2>
+            <section className={styles.Blog}>
+                <h2 className={styles.BlogTitle}>Blog</h2>
                 <BlogList news={data.contents} />
-                <div className={styles.newsLink}>
-                    <ButtonLink href="/blog">もっとみる</ButtonLink>
+                <div className={styles.BlogLink}>
+                    <ButtonLink href="/Blog">もっとみる</ButtonLink>
                 </div>
             </section>
         </>

@@ -1,6 +1,9 @@
 .list {
   border-bottom: 1px solid var(--color-border-light);
+  padding: 24px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .list:last-child {
   border-bottom: none;
 }
@@ -8,46 +11,87 @@
 .link {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
-  padding: 24px 0;
+  gap: 16px; /* ギャップを狭く */
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden; /* はみ出した部分を隠す */
+  width: 100%; /* 親要素に合わせて幅100% */
+}
+
+.link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .image {
-  width: 200px;
-  height: auto;
+  width: 120px; /* 画像の幅を少し小さくする */
+  height: auto; /* 高さは自動調整 */
   border-radius: var(--border-radius);
+  object-fit: cover; /* 画像のアスペクト比を保ちながら調整 */
 }
 
 .title {
-  ont-size: 1.1rem;
-  ont-weight: bold;
-  argin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
 }
 
 .meta {
   display: flex;
   align-items: center;
   gap: 16px;
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 640px) {
+  /* モバイル対応 */
   .link {
     display: block;
     padding: 16px 0;
   }
+
   .image {
-    display: none;
+    width: 100%; /* モバイルでは画像を全幅表示 */
+    height: auto;
+    margin-bottom: 16px; /* 画像とタイトルの間に余白を追加 */
+    border-radius: var(--border-radius);
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 0.4rem;
   }
 
   .meta {
+    display: block; /* メタ情報を縦に並べる */
+    margin-top: 0.4rem;
+  }
+}
+
+@media (min-width: 641px) {
+  /* タブレット以上（デスクトップ向け） */
+  .link {
     display: flex;
+    gap: 16px; /* ギャップを適度に調整 */
+  }
+
+  .image {
+    width: auto; /* デスクトップでも画像幅120px */
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+  }
+
+  .meta {
+    display: flex; /* メタ情報を横並び */
     align-items: center;
     gap: 16px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 }

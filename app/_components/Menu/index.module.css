@@ -1,13 +1,85 @@
+/* ハンバーガーメニューの背景をさらに暗くし、視認性を強化 */
+.nav.open {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 255, 0.9)); /* 背景をさらに暗く */
+  color: #ffffff; /* 明るい文字色 */
+  padding: 40px 20px;
+  min-height: 100vh;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4); /* 影を強化 */
+  border-radius: 12px; /* メニューの角を丸く */
+}
+
+/* メニュー項目を見やすくするために、間隔を広げてフォントサイズを調整 */
 .items {
   display: flex;
-  color: #fff;
-  gap: 40px;
+  flex-direction: column;
+  gap: 24px; /* 項目間の間隔を広げる */
+  align-items: center;
+  font-size: 1.4rem; /* 文字サイズを少し大きく */
+  line-height: 1.5; /* 行間を広げて読みやすく */
 }
 
-.button {
-  display: none;
+.items a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  padding: 14px 28px; /* 項目のパディングを広めに */
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 8px; /* ボタンの角を丸く */
 }
 
+.items a:hover {
+  color: #00bfff; /* ホバー時に明るい青色に変更 */
+  transform: translateY(-4px);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.items a:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.items a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #00bfff; /* フォーカス時に青色のアウトライン */
+}
+
+/* メニューアイコン（ハンバーガーメニュー）のデザイン */
+.button img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+.button:hover img {
+  transform: rotate(90deg);
+}
+
+/* 閉じるボタン */
+.close {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.close img {
+  filter: brightness(0) invert(1);
+}
+
+/* メディアクエリ（モバイル画面サイズ） */
 @media (max-width: 640px) {
   .nav {
     display: none;
@@ -20,12 +92,19 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-bg-painted); color: var(--color-text-unpainted); padding: 24px 16px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 255, 0.9)); /* 背景を暗く */
+    color: #ffffff;
+    padding: 40px 20px;
+    min-height: 100vh;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
   }
 
   .items {
     flex-direction: column;
-    gap: 24px;
+    gap: 24px; /* 項目間のギャップを広げる */
+    font-size: 1.4rem; /* 文字サイズを大きく */
   }
 
   .button {
@@ -33,10 +112,36 @@
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 2000;
   }
-  .close {
-    position: absolute;
-    top: 24px;
-    right: 16px;
+}
+
+/* デスクトップサイズではメニュー項目を横並びに表示 */
+@media (min-width: 641px) {
+  .items {
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    background: none;
+    min-height: auto;
+    box-shadow: none;
+  }
+}
+
+/* アニメーションの定義 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
