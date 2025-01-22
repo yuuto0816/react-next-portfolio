@@ -1,5 +1,5 @@
 import { getBlogList } from "@/app/_libs/microcms";
-import { NEWS_LIST_LIMIT } from "@/app/_constants";
+import { BLOG_LIST_LIMIT } from "@/app/_constants";
 import BlogList from "@/app/_components/BlogList";
 import SearchField from "@/app/_components/SearchField";
 
@@ -10,15 +10,15 @@ type Props = {
 };
 
 export default async function Page({ searchParams }: Props) {
-    const { contents: news } = await getBlogList({
-        limit: NEWS_LIST_LIMIT,
+    const { contents: blog } = await getBlogList({
+        limit: BLOG_LIST_LIMIT,
         q: searchParams.q,
     });
 
     return (
         <>
             <SearchField />
-            <BlogList news={news} />
+            <BlogList blog={blog} />
         </>
     );
 }

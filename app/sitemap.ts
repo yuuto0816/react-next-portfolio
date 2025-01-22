@@ -4,10 +4,10 @@ import { getAllCategoryList, getAllBlogList } from "./_libs/microcms";
 const buildUrl = (path?: string) => `http://localhost:3000${path ?? ""}`;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const newsContents = await getAllBlogList();
+    const blogContents = await getAllBlogList();
     const categoryContents = await getAllCategoryList();
 
-    const newsUrls: MetadataRoute.Sitemap = newsContents.map((content) => ({
+    const blogUrls: MetadataRoute.Sitemap = blogContents.map((content) => ({
         url: buildUrl(`/blog/${content.id}`),
         lastModified: content.revisedAt,
     }));
@@ -37,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             url: buildUrl("/blog"),
             lastModified: now,
         },
-        ...newsUrls,
+        ...blogUrls,
         ...categoryUrls,
     ];
 }

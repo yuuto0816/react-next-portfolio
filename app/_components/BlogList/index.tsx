@@ -4,19 +4,19 @@ import Link from "next/link";
 import styles from "./index.module.css";
 import Category from "../Category";
 import Date from "../Date";
-import { News } from "@/app/_libs/microcms";
+import { Blog } from "@/app/_libs/microcms";
 
 type Props = {
-    news: News[];
+    blog: Blog[];
 };
 
-export default function BlogList({ news }: Props) {
-    if (news.length === 0) {
+export default function BlogList({ blog }: Props) {
+    if (blog.length === 0) {
         return <p>記事がありません。</p>;
     }
     return (
         <ul>
-            {news.map((article) => (
+            {blog.map((article) => (
                 <li key={article.id} className={styles.list}>
                     <Link href={`/blog/${article.id}`} className={styles.link}>
                         {article.thumbnail ? (
