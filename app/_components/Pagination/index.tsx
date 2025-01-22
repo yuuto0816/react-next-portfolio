@@ -1,4 +1,4 @@
-import { NEWS_LIST_LIMIT } from "@/app/_constants";
+import { BLOG_LIST_LIMIT } from "@/app/_constants";
 import Link from "next/link";
 import styles from "./index.module.css";
 
@@ -14,7 +14,7 @@ export default function Pagination({
     basePath = "/blog",
 }: Props) {
     const pages = Array.from(
-        { length: Math.ceil(totalCount / NEWS_LIST_LIMIT) },
+        { length: Math.ceil(totalCount / BLOG_LIST_LIMIT) },
         (_, i) => i + 1
     );
 
