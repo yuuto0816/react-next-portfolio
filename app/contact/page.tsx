@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <div className={styles.container}>
       <p className={styles.text}>
-      私のサイトをご覧いただきありがとうございます！
+      私のサイトをご覧頂きありがとうございます！
       <br />
       ご質問やご相談・サイトへのフィードバックなど
       <br />

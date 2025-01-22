@@ -1,10 +1,14 @@
 .text {
   text-align: center;
   margin-bottom: 40px;
+  font-size: 1rem; /* デフォルトの文字サイズ */
+  font-family: 'Merriweather', serif; /* セリフ体フォントを指定 */
+  font-weight: bold; /* 太文字に設定 */
 }
 
 @media (max-width: 640px) {
   .text {
-    text-align: left;
+    text-align: center;
+    font-size: 0.9rem; /* スマホ画面サイズに合わせた文字サイズ */
   }
 }

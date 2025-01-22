@@ -1,4 +1,4 @@
-/* Cleaned and optimized styles */
+/* リストの基本設定 */
 .list {
   border-bottom: 1px solid var(--color-border-light);
   padding: 20px 0;
@@ -44,6 +44,7 @@
   align-items: center;
   gap: 12px;
   color: var(--color-text-secondary);
+  justify-content: center; /* 中央揃え */
 }
 
 @media (max-width: 640px) {
@@ -67,13 +68,13 @@
   }
 
   .meta {
-    display: block;
-    margin-top: 0.4rem;
-    text-align: center; /* メタ情報を中央揃え */
+    display: flex;
+    justify-content: center; /* カテゴリーと曜日を横並び中央揃え */
+    gap: 16px;
+    text-align: left; /* 左揃え */
+    width: 100%;
   }
 }
-
-
 
 @media (min-width: 641px) {
   .link {
@@ -89,6 +90,7 @@
   .meta {
     flex-wrap: nowrap;
     gap: 16px;
+    justify-content: flex-start; /* 左揃え */
   }
 
   .title {
