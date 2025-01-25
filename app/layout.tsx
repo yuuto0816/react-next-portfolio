@@ -10,13 +10,8 @@ export const metadata: Metadata = {
     template: "%s | ポートフォリオサイト",
     default: "ポートフォリオサイト",
   },
-  description:
-  "「ポートフォリオサイトです。",
   openGraph: {
     title: "ポートフォリオサイト",
-    description:
-    "「ポートフォリオサイトです。",
-    images: ["/ogp.png"],
   },
   alternates: {
     canonical: "http://localhost:3000",
