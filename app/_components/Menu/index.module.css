@@ -22,7 +22,7 @@
   flex-direction: column;
   gap: 24px; /* 項目間の間隔を広げる */
   align-items: center;
-  font-size: 1.4rem; /* 文字サイズを少し大きく */
+  font-size: 1.2rem; /* 文字サイズを小さく */
   line-height: 1.5; /* 行間を広げて読みやすく */
 }
 
@@ -33,24 +33,14 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-  padding: 14px 28px; /* 項目のパディングを広めに */
+  padding: 10px 20px; /* 項目のパディングを調整 */
+  border-radius: 6px; /* 少し角を丸く */
 }
 
+/* ページリンクのホバー時のデザインをおしゃれに */
 .items a:hover {
-  color: #00bfff; /* ホバー時に明るい青色に変更 */
-  transform: translateY(-4px);
-  background-color: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.items a:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.items a:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px #00bfff; /* フォーカス時に青色のアウトライン */
+  color: #00bfff; /* テキストカラーを青色に */
+  transform: scale(1.1); /* 少し拡大 */
 }
 
 /* メニューアイコン（ハンバーガーメニュー）のデザイン */
@@ -102,7 +92,7 @@
   .items {
     flex-direction: column;
     gap: 24px; /* 項目間のギャップを広げる */
-    font-size: 1.4rem; /* 文字サイズを大きく */
+    font-size: 1.2rem; /* 文字サイズを調整 */
   }
 
   .button {
