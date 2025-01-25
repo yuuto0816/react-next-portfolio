@@ -27,21 +27,38 @@
 }
 
 .items a {
+  position: relative;
+  text-decoration: none; /* 下線をデフォルトで消す */
   color: #ffffff;
-  text-decoration: none;
   font-weight: bold;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-  padding: 10px 20px; /* 項目のパディングを調整 */
-  border-radius: 6px; /* 少し角を丸く */
+  transition: transform 0.3s ease, color 0.3s ease;
+  padding: 10px 20px;
 }
 
 /* ページリンクのホバー時のデザインをおしゃれに */
 .items a:hover {
-  color: #00bfff; /* テキストカラーを青色に */
+  color: #00bfff; /* ホバー時にテキストの色を変更 */
   transform: scale(1.1); /* 少し拡大 */
 }
+
+/* オプション：ホバー時に下線にアニメーションを加える */
+.items a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* 初期状態では幅0に設定 */
+  height: 2px; /* 下線の高さ */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* グラデーションで色を設定 */
+  transition: width 0.4s ease, background 0.3s ease; /* アニメーションの設定 */
+}
+
+.items a:hover::after {
+  width: 100%; /* ホバー時に下線が広がる */
+  background: linear-gradient(90deg, #00bfff, #0077ff); /* ホバー時のグラデーション変更 */
+}
+
 
 /* メニューアイコン（ハンバーガーメニュー）のデザイン */
 .button img {
