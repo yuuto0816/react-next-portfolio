@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     template: "%s | ポートフォリオサイト",
     default: "ポートフォリオサイト",
   },
+  description:
+  "「ポートフォリオサイトです。",
   openGraph: {
     title: "ポートフォリオサイト",
   },
