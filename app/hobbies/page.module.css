@@ -1,75 +1,135 @@
+/* 全体コンテナ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #d8fbff; /* 背景を少し明るいグレーに */
+  border-radius: 8px;
+}
+
+/* テキストセクション */
 .text {
   text-align: center;
   margin-bottom: 40px;
+  color: #333; /* テキストを濃いグレーに */
+  font-size: 2rem; /* フォントサイズを少し大きめに */
+  font-weight: 600;
 }
 
+/* 趣味リスト */
 .list {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 40px;
   margin-bottom: 80px;
+  padding: 20px;
+  background-color: #ffffff; /* 背景を白にして清潔感を出す */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 軽い影をつけて浮き立たせる */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーションを追加 */
 }
 
+/* 偶数番目のリストアイテムのレイアウト */
 .list:nth-child(even) {
   flex-direction: row-reverse;
 }
 
+/* 画像のスタイル */
 .image {
-  width: 240px;
-  height: auto;
-  border-radius: var(--border-radius);
+  width: 260px; /* 画像のサイズを少し大きく */
+  height: 260px; /* 高さも合わせて丸い形を保つ */
+  border-radius: 50%; /* 完璧な丸にする */
+  border: 5px solid #00bfff; /* 明るい青の枠線を追加 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 影で浮き立たせる */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* アニメーションを追加 */
 }
 
+/* ホバー時のリストアイテム */
+.list:hover {
+  transform: translateY(-5px); /* 少し上に浮かせる */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* ホバー時に影を強調 */
+}
+
+/* ホバー時の画像 */
+.list:hover .image {
+  transform: scale(1.1); /* 少し拡大 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* 影を強調 */
+}
+
+/* 名前のスタイル */
 .name {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-}
-
-.position {
+  color: #333;
   margin-bottom: 8px;
 }
 
-.profile {
-  font-size: 0.9rem;
+/* 位置のスタイル */
+.position {
+  font-size: 1rem;
+  color: #777; /* 少し薄いグレーで目立たなく */
+  margin-bottom: 8px;
 }
 
+/* プロフィールのスタイル */
+.profile {
+  font-size: 1rem;
+  color: #555; /* 濃いグレーに */
+  line-height: 1.5;
+}
+
+/* フッターセクション */
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid #ddd;
   padding-top: 40px;
   text-align: center;
   gap: 24px;
 }
 
+/* メッセージのスタイル */
 .message {
   font-size: 2rem;
   font-weight: bold;
+  color: #00bfff; /* 青色で目立たせる */
 }
 
+/* 空リストのメッセージ */
 .empty {
   margin-bottom: 40px;
+  font-size: 1.2rem;
+  color: #aaa; /* グレーにして控えめな印象 */
 }
 
+/* メディアクエリ：モバイル対応 */
 @media (max-width: 640px) {
   .text {
     text-align: left;
+    font-size: 1.5rem; /* モバイルサイズでフォントを調整 */
   }
 
   .list {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
   }
+
   .list:nth-child(even) {
-    flex-direction: column;
+    flex-direction: column; /* モバイルでは縦並びに */
   }
+
   .name {
     text-align: center;
+    font-size: 1.2rem; /* モバイルでは少し小さく */
   }
+
   .position {
+    text-align: center;
+  }
+
+  .profile {
     text-align: center;
   }
 }

@@ -1,43 +1,71 @@
+/* フォームの全体的なレイアウト */
 .form {
   max-width: 600px;
   margin: 0 auto;
+  padding: 20px;
+  background-color: #d8fbff; /* フォーム背景色 */
+  border-radius: 8px; /* 丸みのある角 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 軽い影 */
+  transition: all 0.3s ease;
 }
 
+.form:hover {
+  transform: scale(1.02); /* マウスオーバーで少し拡大 */
+}
+
+/* アイテム（入力項目） */
 .item {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 8px 0;
+  padding: 12px 0;
 }
 
+/* 横並びのレイアウト */
 .horizontal {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   gap: 24px;
 }
 
+/* ラベルのスタイル */
 .label {
   font-size: 14px;
+  font-weight: 500;
+  color: #333333; /* 落ち着いた文字色 */
+  margin-bottom: 4px;
+  transition: color 0.3s ease;
 }
 
-.textfield {
-  border: 1px solid var(--color-border);
-  padding: 8px;
-  border-radius: 4px;
-  line-height: 1.5;
-  width: 100%;
-}
-
+/* 入力フィールドのデザイン */
+.textfield,
 .textarea {
-  border: 1px solid var(--color-border);
-  padding: 8px;
-  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  padding: 12px;
+  border-radius: 6px;
   line-height: 1.5;
   width: 100%;
+  font-size: 16px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.textfield:focus,
+.textarea:focus {
+  border-color: #00bfff; /* フォーカス時の色 */
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.3); /* フォーカス時の影 */
+  outline: none; /* デフォルトのアウトラインを消す */
+}
+
+/* メッセージエリアのデザイン */
+.textarea {
+  min-height: 150px; /* 高さを設定 */
+  resize: vertical; /* ユーザーが縦方向にサイズ変更可能 */
+}
+
+/* アクションエリア（エラーメッセージと送信ボタン） */
 .actions {
   text-align: center;
   margin-top: 40px;
@@ -45,29 +73,50 @@
 
 .button {
   border: none;
-  background-color: var(--color-button-primary);
+  background-color: #00bfff; /* ボタンの色 */
   padding: 16px 40px;
   font-size: 16px;
-  border-radius: 4px;
-  color: var(--color-text-unpainted);
+  font-weight: 600;
+  border-radius: 6px;
+  color: #ffffff;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.button:hover {
+  background-color: #00aacc; /* ホバー時に色を変更 */
+  transform: scale(1.05); /* ホバー時に少し拡大 */
+}
+
+.button:active {
+  transform: scale(1); /* クリック時に元のサイズに戻る */
+}
+
+/* 成功メッセージのデザイン */
 .success {
-  background-color: var(--color-bg-sub);
+  background-color: #e0ffe0; /* 成功時の背景色 */
+  color: #3e8e41;
   text-align: center;
   padding: 40px;
-  border-radius: var(--border-radius);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .error {
-  color: var(--color-text-error);
+  color: #ff4c4c; /* エラーメッセージの色 */
   font-size: 14px;
   margin-bottom: 8px;
 }
 
+/* レスポンシブデザイン（小さい画面でも適切なレイアウト） */
 @media (max-width: 640px) {
   .success {
     text-align: left;
+  }
+
+  /* 入力項目を縦並びにする */
+  .horizontal {
+    flex-direction: column;
+    gap: 16px;
   }
 }
