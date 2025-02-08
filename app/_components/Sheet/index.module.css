@@ -10,7 +10,8 @@
 .container {
   position: relative;
   background-color: #fff;
-  width: auto;
+  width: 100%;
+  max-width: 1000px;
   margin: auto;
   padding: 80px;
   border-radius: 8px;
